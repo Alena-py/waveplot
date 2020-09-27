@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Upload</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">Upload mp3</button>
+  </form>
+  {% if url %}
+    <p>Uploaded file: <img src= "{{ plot }}" width="1000"></p>
+  {% endif %}
+{% endblock %}
